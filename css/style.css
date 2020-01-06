@@ -1,0 +1,788 @@
+/* Header */
+
+header{
+    background-color: #191E22;
+    position: fixed;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 2;
+}
+
+.header{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #191E22;
+    
+}
+
+#close_menu, #open_menu{
+    float: left;
+}
+
+#close_profile{
+    float: right;
+}
+
+#open_search, #toggle_notification, #open_profile{
+    float: right;
+} 
+
+#close_profile, #close_menu{
+    padding: 16px;
+}
+
+#profile, #search_bar{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-x: hidden;
+    top: 0;
+    right: -100%;
+    background-color: #2E3D49;
+}
+
+#profile, #profile input{
+    text-align: center;
+}
+
+#profile > ul{
+    margin-left: 20%;
+    text-align: left;
+}
+
+#profile a{
+    margin-top: 3%;
+} 
+
+header > nav{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-x: hidden;
+    top: 0;
+    left: -100%;
+    background-color: #2E3D49;
+}
+
+header > nav > ul{
+    line-height: 2;
+    font-size: 130%;
+}
+
+header > nav > ul > li img, #profile img{
+    padding-right: 5%;
+}
+
+#profile > div > h2{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#profile > ul{
+    padding: 0px 40px;
+    line-height: 2;
+}
+
+#profile > ul > li{
+    display: block;
+}
+
+#profile > form{
+    text-align: center;
+    display: inline-block;
+    width: 80%;
+    line-height: 2;
+}
+
+#profile > form > *{
+    width: 100%;
+}
+
+#profile > form > input[type=submit], #profile a{
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10%;
+}
+
+#profile > a{
+    display: inline-block;
+}
+
+/* Notifications */ 
+
+#toggle_notification{
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+#notifications{
+    width: 75%;
+    height: 0;
+    position: fixed;
+    overflow-x: hidden;
+    top: 50px;
+    left: 15%;
+    background-color: #2E3D49;
+}
+
+#notifications > h2{
+    background-color: #191E22;
+    margin: 0px;
+    padding: 8px;
+    border: 1px black solid;
+    font-size: larger;
+    text-align: center;
+}
+
+#notifications > article{
+    border-bottom: #191E22 2px solid;
+    padding-bottom: 0;
+}
+
+#notifications h3{
+    margin-top: 10px;
+}
+
+#notifications h5{
+    text-align: right;
+}
+
+/* Search */
+
+#search_bar > div{
+    background-color: #191E22;
+    padding: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#search_bar > div > *, #search_bar > div > form > *, #complete_search_bar > *{
+    vertical-align: middle;
+}
+
+#search_bar > div > form, #complete_search_bar{
+    height: 10%;
+    display: inline-block;
+}
+
+#search_bar > div > form > input[type="search"], #complete_search_bar > input[type="search"]{
+    height: 30px;
+    margin: 0px 15px;
+    padding: 0px 5px;
+}
+
+/* Searching */
+
+#filter{
+    margin-top: 10px;
+    background-color: #191E22;
+    border: black 2px solid;
+    border-radius: 25px;
+}
+
+#filter, #filter > label, #filter > fieldset > label{
+    display: block;
+    text-align: center;
+    line-height: 2;
+    font-size: 90%;
+}
+
+#filter > h3{
+    margin-top: 10px;
+    margin-bottom: 0;
+    clear: right;
+}
+
+#filter > input[type="submit"]{ 
+    text-align: center;
+}
+
+#filter > h5{
+    display: inline-block;
+}
+
+#filter #tickets{
+    margin-right: 10px;
+}
+
+#filter input[type="number"]{
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+}
+
+#filter > label[for="price"], #filter > label[for="cities"], #filter > label[for="availability"], #filter > label[for="start_date"],  #filter > label[for="end_date"], #filter > label[for="categories"], #filter > label[for="manager"]{
+    margin-top: 16px;
+}
+
+#filter > label[for="cities"], legend{
+    font-weight: bold;
+    font-size: medium;
+}
+
+/* Footer */
+
+footer{
+    margin-top: auto;
+    background-color: #191E22;
+    text-align: center;
+    padding: 16px 0px;
+    line-height: 2;
+    width: 100%;
+    vertical-align: baseline;
+}
+
+footer > a:first-child{
+    margin-right: 20%;
+}
+
+footer > a:last-child{
+    margin-right: 20%;
+}
+
+footer > p{
+    margin-bottom: 0;
+}
+
+/* Main */
+
+main{
+    text-align: center;
+    padding: 80px 3% 20px;
+}
+
+/* General */
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    background-color: #2E3D49;
+    margin: 0;
+    color: white;
+    font-family: "Average Sans", sans-serif;
+    font-size: 100%;
+    position: relative;
+}
+
+/*Logo */
+
+header > div > a{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+h1{
+    margin: 0;
+    font-size: 90%;
+}
+
+ul{
+    list-style: none;
+}
+
+.accessibility, #events, #menu_categories{
+    display: none;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.home_image{
+    width: 85%;
+}
+
+.big_image{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+#arrow_events, #arrow_categories{
+    width: 15px;
+    height: 15px;
+    margin-left: 5%;
+    padding-right: 0;
+}
+
+a{
+    color: white;
+}
+
+p{
+    margin: 0px;
+}
+
+/*  Registrazione */
+
+main > form > label, main > form > input{
+    display: inline-block;
+    width: 45%;
+    line-height: 3;
+}
+
+main > form > label[for="username"], main > form > input#username, main > form > label[for="title"], main > form > input#title{
+    line-height: 2;
+    width: 35%;
+    margin-right: 4%;
+    margin-bottom: 25px;
+}
+
+main > form > label{
+    text-align: left;
+    font-size: 90%;
+}
+
+main > form > input{
+    height: 25px;
+    font-size: 120%;
+}
+
+main > form > label[for="img"], main > form > input[type="checkbox"], main > form > label[for="long_desc"]{
+    display: block;
+    text-align: center;
+    width: auto;
+}
+
+main > form > #img{
+    font-size: 90%;
+    height: 40px;
+    vertical-align: middle;
+    line-height: 1;
+    width: 90%;
+}
+
+main > form > input[type="submit"]{
+   margin-top: 4%;
+   width: auto;
+   box-sizing: content-box;
+}
+
+main > form > p{
+    padding-top: 5%;
+    font-size: 80%;
+    margin-bottom: 20px;
+}
+
+main > form{
+    text-align: center;
+}
+
+/* Contatti */
+
+table{
+    width: 100%;
+    line-height: 2;
+    margin-bottom: 10px;
+}
+
+table > tbody{
+    font-size: 100%;
+}
+
+/* Gestisci Evento */
+
+#hidden_image_loader{
+    display: none;
+} 
+
+label[for="hidden_image_loader"]{
+    line-height: 3;
+    display: block;
+    width: auto;
+    text-align: center;
+}
+
+#home_events > img{
+    position: absolute;
+    top: 200px;
+    background-color: black;
+    opacity: 80%;
+    border-radius: 50%;
+    padding: 10px;
+    left: 5%;
+}
+
+#home_events > img:last-child{
+    left: auto;
+    right: 5%;
+    transform: rotate(180deg);
+}
+
+#home_events{
+    border: black 2px solid;
+}
+
+#title_header{
+    text-decoration: none;
+}
+
+h2{
+    font-size: large;
+    font-style: italic;
+    padding: 5px;
+}
+
+h3{
+    font-size: medium;
+    margin-top: 0;
+}
+
+h4, h5{
+    font-size: small;
+}
+
+#full_event{
+    text-align: left;
+    padding: 0px 10px;
+}
+
+#full_event > h2{
+    text-align: center;
+    margin-top: 0;
+}
+
+#full_event > h3{
+    margin-bottom: 10px;
+}
+
+#full_event > h4{
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 10px;
+    padding-left: 0;
+}
+
+#full_event > p{
+    margin-bottom: 40px;
+}
+
+#full_event > .button{
+    float: right;
+    vertical-align: middle;
+}
+
+section > h2{
+    background-image: linear-gradient(to right, #2E3D49, white, #2E3D49);
+    padding: 5px;
+    font-size: large;
+    color: black;
+}
+
+.header > h2{
+    padding: 0;
+}
+
+article{
+    padding: 10px;
+    padding-top: 0;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#full_event{
+    font-family: "Times New Roman", Times, serif;
+}
+
+article h2{
+    background-image: linear-gradient(to right, #2E3D49, black, #2E3D49);
+
+}
+
+article > h3{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.address{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button{
+    border: black 3px solid;
+    background-color: #191E22;
+    color: white;
+    padding: 7px;
+    cursor: pointer;
+    font-size: 80%;
+    font-style: italic;
+    text-decoration: none;
+    border-radius: 7px;
+    height: auto;
+    line-height: initial;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.button:hover{
+    background-color: black;
+    color: #00CED1;
+}
+
+#tabs_bar{
+    overflow: hidden;
+    clear: both;
+}
+  
+.tab_links{
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: medium;
+    border-radius: 0 15px 0 0;
+    height: 50px;
+}
+
+#toggle_events_organized{
+    width: 34%;
+}
+
+#toggle_events_future{
+    width: 28%;
+}
+
+#toggle_events_past{
+    width: 38%;
+}
+
+.tab_links.selected{
+    background-color: black;
+    color: #00CED1;
+}
+
+.tab_content {
+    border: black 1px solid;
+    background-color: #24313b;
+    display: none;
+}
+
+.tab_content > section{
+    margin-bottom: 30px;
+}
+
+#events_organized{
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#events_organized h3{
+    margin-bottom: 20px;
+}
+
+.accept:hover{
+    color: green;
+}
+
+.cancel:hover{
+    color: red;
+}
+
+#filter > .category_filter, #filter > .manager_filter{
+    text-align: left;
+    margin-left: 40%;
+}
+
+#filter > fieldset > label{
+    text-align: left;
+    margin-left: 40%;
+}
+
+#order{
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+#order:focus{
+    outline: none;
+}
+
+.order-value{
+    outline: none;
+    background: #191E22;
+}
+
+#filter > .hide_default_cat, #filter .hide_default_man{
+    display: none;
+}
+
+#show_more_categories, #show_more_managers{
+    transition: 0.2s ease-in;
+}
+
+main > article > p:last-of-type{
+    padding-top: 10px;
+    margin-bottom: 20px;
+    clear: left;
+}
+
+#pref{
+    clear: left;
+    text-align: left;
+    margin-left: 30px;
+    margin-bottom: 0;
+    padding-top: 20px;
+}
+
+#categories_profile{
+    text-align: left;
+    float: left;
+    width: 30%;
+    line-height: 1.3;
+    list-style-type: disc;
+    box-sizing: border-box;
+}
+
+div > ul:nth-of-type(2){
+    width: 60%;
+    float: right;
+    text-align: center;
+    line-height: 2;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div > ul:nth-of-type(2) *{
+    overflow-wrap: break-word;
+}
+
+.check_label, .hour, .price_label{
+    width: initial;
+    display: block;
+    text-align: center;
+}
+
+form > textarea{
+    width: 90%;
+    resize: none;
+    height: 250px;
+}
+
+form input[name="price"], form input[name="number_tickets"]{
+    width: 20%;
+}
+
+.error{
+    color: orange;
+    font-size: large;
+}
+
+fieldset{
+    border: 0;
+}
+
+#cart{
+    padding: 0;
+}
+
+article > h4{
+    margin-top: 0;
+}
+
+.manager_h{
+    background-image: unset;
+    text-decoration: none;
+}
+
+.tab_content h2{
+    background-image: linear-gradient(to right, #24313b, black, #24313b);
+}
+
+form > label[for="cities"]{
+    clear: left;
+}
+
+@media screen and (min-width: 768px){
+
+    main{
+        width: 50%;
+        align-self: center;
+    }
+
+    /* HOME */
+
+    #home_events > img{
+        left: 25%;
+        top: 300px;
+    }
+    
+    #home_events > img:last-child{
+        right: 25%;
+    }
+
+    section > img, #cart > li img, main article img, form > img{
+        padding-left: calc(49% - 200px);
+    }
+
+    h1{
+        font-size: x-large;
+    }
+
+    #cart h3:not(.address){
+        text-align: left;
+    }
+
+    header > nav{
+        width: 320px;
+        height: calc(100% - 80px);
+        border-right: black 2px solid;
+        border-bottom: black 2px solid;
+        background-color: #24313b;
+    }
+
+    #profile, #search_bar{
+        width: 320px;
+        height: calc(100% - 80px);
+        border-left: black 2px solid;
+        border-bottom: black 2px solid;
+        background-color: #24313b;
+    }
+
+    #notifications{
+        width: 275px;
+        left: calc(100% - 355px);
+    }
+
+    main > table{
+        margin-left: 10%;
+    }
+
+    main > table caption{
+        margin-right: 20%;
+    }
+
+    main > article > a > h2, main > article > p:first-of-type{
+        text-align: left;
+    }
+
+    form[action="update_event.php"] label[for="categories"], form[action="create_event.php"] label[for="categories"]{
+        text-align: center;
+    }
+
+    .address{
+        clear: left;
+        padding-top: 20px;
+    }
+
+    .big_image{
+        width: 200px;
+        height: 200px;
+    }
+}
