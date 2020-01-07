@@ -8,13 +8,13 @@
     <input type="text" id="city" name="city" required value="<?php echo isset($event) ? ucfirst($event["luogo_avvenimento"]): "";?>" />
     <label for="address">Indirizzo Evento</label>
     <input type="text" id="address" name="address" required value="<?php echo isset($event) ? $event["indirizzo"]: "";?>"/>
-    <label for="start_date">Data d'inizio Evento
+    <label for="start_date">Data d'inizio Evento<br/>
     <input type="date" id="start_date" name="start_date" min="<?php echo date("Y-m-d"); ?>" required value="<?php echo isset($event) ? $event["data_avvenimento"]: "";?>"/></label>
-    <label for="end_date" <?php echo !isset($event) || (isset($event) && $event["data_conclusione"] === "0000-00-00") ? "style = 'display : none;'" : ""; ?>>Data di fine Evento
+    <label for="end_date" <?php echo !isset($event) || (isset($event) && $event["data_conclusione"] === "0000-00-00") ? "style = 'display : none;'" : ""; ?>>Data di fine Evento<br/>
     <input type="date" id="end_date" name="end_date" min="<?php echo date("Y-m-d"); ?>" value="<?php echo isset($event) ? $event["data_conclusione"]: "";?>"/></label>
     <label for="check_more_days" class="check_label"><input type="checkbox" name="check_more_days" value="Evento in più giorni" id="check_more_days" <?php echo isset($event["data_conclusione"]) ? "checked" : ""; ?>/>Evento in pi&ugrave; giorni</label>
     <label class="hour">Orario di inizio: <input type="time" name="time" required value="<?php echo isset($event) ? substr($event["orario"], 0, 5): "";?>"/></label>
-    <label for="categories">Categoria
+    <label for="categories">Categoria<br/>
     <select name="category" id="categories">
     <?php foreach($dbh->getCategories() as $categoria): ?>
         <option value="<?php echo $categoria["id_categoria"]; ?>" <?php echo isset($event) && $event["categoria"] === $categoria["id_categoria"] ? "selected" : "";?>><?php echo $categoria["nome_categoria"]; ?></option>

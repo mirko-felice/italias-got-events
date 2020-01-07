@@ -6,3 +6,4 @@
     <h3 class="address"><?php echo ucfirst($event["luogo_avvenimento"]).", ".$event["indirizzo"]; ?></h3>
     <h4>Biglietti disponibili: <?php echo $dbh->getTicketsAvailable($event["id_evento"]); ?></h4>
     <h4>Prezzo Biglietto: <?php echo $event["prezzo"] == 0 ? "Gratuito" : $event["prezzo"]." &euro;"; ?></h4>
+    <h4>Visto <?php echo $event["numero_visualizzazioni"]; ?> volte</h4>

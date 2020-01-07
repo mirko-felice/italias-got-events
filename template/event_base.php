@@ -23,11 +23,12 @@
     <br/>
     <h4>Prezzo Biglietto: <?php echo $evento["prezzo"] == 0 ? "Gratuito" : $evento["prezzo"]." &euro;"; ?></h4>
     <?php if(isUserLoggedIn() && !isUserLoggedMe($evento["organizzatore"]) && date_diff(date_create($evento["data_avvenimento"]), date_create())->invert == 1): ?>
-    <button class="button" onclick="addToCart(<?php echo $evento['id_evento'].','.$dbh->getTicketsAvailable($evento['id_evento']); ?>)">Aggiungi al carrello</button><br/>
+    <button class="button" onclick="addToCart(<?php echo $evento['id_evento'].','.$dbh->getTicketsAvailable($evento['id_evento']); ?>)">Aggiungi al carrello</button>
     <?php elseif(isUserLoggedMe($evento["organizzatore"])): ?>
     <a onclick="confirmDeleteEvent(<?php echo $evento['id_evento'];?>)" class="button cancel">Cancella</a>
-    <a href="manage_event.php?id=<?php echo $evento["id_evento"]; ?>" class="button">Modifica</a><br/>
+    <a href="manage_event.php?id=<?php echo $evento["id_evento"]; ?>" class="button">Modifica</a>
     <?php endif; ?>
+    <br/>
     <h4>Visto <?php echo $evento["numero_visualizzazioni"]; ?> volte</h4>
     <a class="button" href="contacts.php?id=<?php echo $evento["organizzatore"]; ?>">Contatti Organizzatore</a>
 </section>

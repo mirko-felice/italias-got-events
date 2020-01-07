@@ -159,14 +159,14 @@
         }
 
         public function getSuggestedEvents(){
-            $stmt = $this->db->prepare("SELECT * FROM eventi, categorie, utenti WHERE categoria = id_categoria AND id_utente = organizzatore AND evento_attivo = TRUE AND id_categoria IN (SELECT id_categoria FROM utente_ha_categoria WHERE id_utente = ?) ORDER BY data_inserimento DESC LIMIT 3");
+            $stmt = $this->db->prepare("SELECT * FROM eventi, categorie, utenti WHERE categoria = id_categoria AND id_utente = organizzatore AND evento_attivo = TRUE AND id_categoria IN (SELECT categoria FROM utente_ha_categoria WHERE utente = ?)");
             $stmt->bind_param("i", $_SESSION["id_utente"]);
             $stmt->execute();
             return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
         }
         
         public function getNearEvents(){
-            $stmt = $this->db->prepare("SELECT * FROM eventi, categorie, utenti WHERE categoria = id_categoria AND id_utente = organizzatore AND evento_attivo = TRUE AND città = luogo_avvenimento AND luogo_avvenimento IN (SELECT città FROM utenti WHERE id_utente = ?) ORDER BY data_inserimento DESC LIMIT 3");
+            $stmt = $this->db->prepare("SELECT * FROM eventi, categorie, utenti WHERE categoria = id_categoria AND id_utente = organizzatore AND evento_attivo = TRUE AND città = luogo_avvenimento AND luogo_avvenimento IN (SELECT città FROM utenti WHERE id_utente = ?)");
             $stmt->bind_param("i", $_SESSION["id_utente"]);
             $stmt->execute();
             return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -189,6 +189,7 @@
 
             if($title != ""){
                 $query = $query." AND titolo LIKE ?";
+                $title = "%".$title."%";
                 array_push($params, $title);
                 $params_to_bind = $params_to_bind."s";
             }
@@ -210,12 +211,12 @@
                 $params_to_bind = $params_to_bind."i";
             }
 
-            $query = $query." AND data_avvenimento > ?";
+            $query = $query." AND data_avvenimento >= ?";
             array_push($params, $start_date);
             $params_to_bind = $params_to_bind."s";
 
             if($end_date != 0){
-                $query = $query." AND data_avvenimento < ?";
+                $query = $query." AND data_avvenimento <= ?";
                 array_push($params, $end_date);
                 $params_to_bind = $params_to_bind."s";
             }
@@ -230,7 +231,7 @@
             }
             $query = str_replace(" OR)", ")", $query);
 
-            if($manager != ""){
+            if($manager != 0){
                 $query = $query." AND organizzatore = ?";
                 array_push($params, $manager);
                 $params_to_bind = $params_to_bind."i";
@@ -346,7 +347,7 @@
         }
 
         public function getUserNotifications(){
-            $stmt = $this->db->prepare("SELECT * FROM utente_riceve_notifiche WHERE utente = ?");
+            $stmt = $this->db->prepare("SELECT * FROM utente_riceve_notifiche WHERE utente = ? ORDER BY timestamp DESC");
             $stmt->bind_param("i", $_SESSION["id_utente"]);
             $stmt->execute();
             return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);

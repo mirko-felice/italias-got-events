@@ -86,18 +86,6 @@ function refundTickets(id_evento, max_refundable){
     } 
 }
 
-function getNotifications(){
-    $.getJSON("notifications.php", function(data){
-        let notifiche = printNotifications(data);
-        const notifications = $("#notifications");
-        if(notifiche == ""){
-            notifications.html(`<h2>Notifiche</h2><h3>Non hai ancora ricevuto alcuna notifica.</h3>`);
-        } else{
-            notifications.html(`<h2>Notifiche</h2>` + notifiche);
-        }
-    });
-}
-
 function confirmDeleteUser(id){
     if(confirm("Sei sicuro di voler disabilitare l'utente?")){
         window.location.href = "delete_user.php?id=" + id;
@@ -123,6 +111,24 @@ function confirmEnableEvent(id){
 }
 
 $(document).ready(function(){
-    getNotifications();
-    setInterval(getNotifications(), 3000);
+    $.getJSON("notifications.php", function(data){
+        let notifiche = printNotifications(data);
+        const notifications = $("#notifications");
+        if(notifiche == ""){
+            notifications.html(`<h2>Notifiche</h2><h3>Non hai ancora ricevuto alcuna notifica.</h3>`);
+        } else{
+            notifications.html(`<h2>Notifiche</h2>` + notifiche);
+        }
+    });
+    let interval = setInterval(function(){
+        $.getJSON("notifications.php", function(data){
+            let notifiche = printNotifications(data);
+            const notifications = $("#notifications");
+            if(notifiche == ""){
+                notifications.html(`<h2>Notifiche</h2><h3>Non hai ancora ricevuto alcuna notifica.</h3>`);
+            } else{
+                notifications.html(`<h2>Notifiche</h2>` + notifiche);
+            }
+        }
+    )}, 3000);
 });

@@ -1,3 +1,6 @@
+<?php if(isset($_GET["err_username"])): ?>
+<h2 class="error">Il nome utente scelto non &egrave; disponibile.</h2>
+<?php endif; ?>
 <form action="register_user.php" method="post" enctype="multipart/form-data" >
     <label for="hidden_image_loader">Clicca l'immagine per caricare una foto per il tuo profilo.</label>
     <input type="file" id="hidden_image_loader" name="image" accept="image/*" class="hidden_image_loader"/>

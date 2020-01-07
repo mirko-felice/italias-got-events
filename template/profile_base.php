@@ -17,7 +17,7 @@
         <a onclick="confirmEnableUser(<?php echo $user['id_utente'];?>)" class="button accept">Riabilita utente</a>
         <?php endif; ?>
     <?php endif; ?>
-    <div>
+    <div id="pref_div">
     <h3 id="pref">Preferenze</h3>
     <ul id="categories_profile">
     <?php if(isset($user["nomi_categorie"])): ?>
@@ -27,7 +27,7 @@
     <?php endif; ?>
     </ul>
     </div>
-    <div>
+    <div id="cont_div">
     <h3 id="cont">Contatti</h3>
     <ul>
         <li><a href="mailto:<?php echo $user["email"]; ?>"><?php echo $user["email"]; ?></a></li>

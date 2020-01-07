@@ -43,6 +43,7 @@
         <img src="<?php echo UPLOAD_DIR; ?>show_more.svg" id="show_more_categories" alt="Mostra altre categorie"/>
         <fieldset>
         <legend>Organizzatore</legend>
+        <label for="manager_0" class="manager_filter" ><input type="radio" name="manager" value="0" id="manager_0" <?php echo !isset($manager) || $manager == 0  ? "checked" : ""; ?>/>Qualsiasi</label>
         <?php $i=0; foreach($dbh->getManagers() as $manager_check): $i++;?>
         <label for="manager_<?php echo $manager_check["id_utente"]; ?>" class="manager_filter <?php echo $i > 3 ? "hide_default_man" : ""; ?>" ><input type="radio" name="manager" value="<?php echo $manager_check["id_utente"]; ?>" id="manager_<?php echo $manager_check["id_utente"]; ?>" <?php echo $manager_check["id_utente"] == $manager ? "checked" : ""; ?>/><?php echo $manager_check["nome"]." ".$manager_check["cognome"]; ?></label>
         <?php endforeach; ?>

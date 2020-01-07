@@ -20,7 +20,7 @@
 
     if(!isset($_COOKIE["controllo_giornaliero"])){
         foreach($dbh->getEventsFutureFromUserId($_SESSION["id_utente"]) as $event){
-            if(date_diff(date_create($evento["data_avvenimento"]), date_create())->days == 1){
+            if(date_diff(date_create($event["data_avvenimento"]), date_create())->days <= 1){
                 $pieces = $dbh->getNotificationPieces(5);
                 $messaggio_finale = $pieces[0]["bozza"].$event["titolo"].$pieces[1]["bozza"].$event["orario"];
                 $dbh->sendNotificationToUser($_SESSION["id_utente"], $messaggio_finale, $pieces[0]["id_notifica"]);    

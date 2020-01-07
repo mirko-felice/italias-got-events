@@ -343,7 +343,7 @@ main > form > label[for="username"], main > form > input#username, main > form >
 }
 
 main > form > label{
-    text-align: left;
+    text-align: center;
     font-size: 90%;
 }
 
@@ -477,7 +477,7 @@ h4, h5{
     vertical-align: middle;
 }
 
-section > h2{
+section > h2, #cart h2{
     background-image: linear-gradient(to right, #2E3D49, white, #2E3D49);
     padding: 5px;
     font-size: large;
@@ -659,8 +659,25 @@ div > ul:nth-of-type(2){
     box-sizing: border-box;
 }
 
-div > ul:nth-of-type(2) *{
+div:nth-of-type(2) > ul *{
     overflow-wrap: break-word;
+}
+
+#cart a{
+    text-decoration-color: black;
+}
+
+#cont_div{
+    float: right;
+}
+
+#cont_div ul{
+    padding: 0;
+}
+
+#pref_div, #cont_div{
+    width: 45%;
+    display: block;
 }
 
 .check_label, .hour, .price_label{
@@ -716,7 +733,9 @@ form > label[for="cities"]{
         align-self: center;
     }
 
-    /* HOME */
+    main > form > label{
+        text-align: left;
+    }
 
     #home_events > img{
         left: 25%;
@@ -772,7 +791,7 @@ form > label[for="cities"]{
         text-align: left;
     }
 
-    form[action="update_event.php"] label[for="categories"], form[action="create_event.php"] label[for="categories"]{
+    form[action="update_event.php"] label[for="categories"], form[action="update_event.php"] label[for="start_date"], form[action="update_event.php"] label[for="end_date"], form[action="create_event.php"] label[for="categories"], form[action="create_event.php"] label[for="start_date"], form[action="create_event.php"] label[for="end_date"]{
         text-align: center;
     }
 
